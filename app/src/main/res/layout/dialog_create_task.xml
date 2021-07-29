@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="@drawable/background_bottom_dialog" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_bottom_sheet_heading"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/light_background"
+            android:gravity="center"
+            android:paddingStart="@dimen/default_padding_normal"
+            android:paddingEnd="@dimen/default_padding_normal"
+            android:text="@string/create_task_title"
+            android:textColor="#554E8F"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/task_name_edit_text"
+            style="?android:attr/textViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:focusable="true"
+            android:gravity="center"
+            android:hint="@string/enter_title_hint"
+            android:maxLines="2"
+            android:padding="@dimen/default_padding_normal" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/default_padding_normal"
+                android:paddingEnd="@dimen/default_padding_normal"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/shopping_ship"
+                    style="@style/CategoryChip.Shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_shopping" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/work_chip"
+                    style="@style/CategoryChip.Work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_work" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/fitness_chip"
+                    style="@style/CategoryChip.Fitness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_fitness" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/study_chip"
+                    style="@style/CategoryChip.Study"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_study" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/personal_chip"
+                    style="@style/CategoryChip.Personal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_personal" />
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/default_padding_normal"
+            android:paddingBottom="@dimen/default_padding_normal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_margin="@dimen/default_padding_normal"
+                android:background="@drawable/save_background"
+                android:gravity="center"
+                android:text="@string/save_title"
+                android:textColor="@color/light_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayLight" />
+
+
+    </LinearLayout>
+</LinearLayout>

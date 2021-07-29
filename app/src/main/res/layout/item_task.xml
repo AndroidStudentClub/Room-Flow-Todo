@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/guest_card_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/default_padding_normal"
+    android:layout_marginTop="@dimen/default_padding_small"
+    android:layout_marginRight="@dimen/default_padding_normal"
+    android:layout_marginBottom="@dimen/default_padding_small"
+    card_view:cardElevation="9dp"
+    card_view:cardUseCompatPadding="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/todo_foreground"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <View
+                android:id="@+id/category_marker"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:background="@color/teal_200" />
+
+            <CheckBox
+                android:id="@+id/status_checkbox"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/default_padding_normal"
+                android:layout_marginEnd="@dimen/default_padding_normal"
+                android:background="@drawable/checkbox_selector"
+                android:button="@null" />
+
+            <TextView
+                android:id="@+id/task_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="8dp"
+                android:textColor="#554E8F"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Задача" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

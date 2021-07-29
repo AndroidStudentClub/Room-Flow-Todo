@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#F857C3</color>
+    <color name="teal_700">#E31AA0</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="transparent_black">#00ffffff</color>
+    <color name="light_background">#fafafa</color>
+
+    <color name="grayMiddle">#7A7A7A</color>
+    <color name="grayLight">#C2C2C2</color>
+
+    <color name="personal_color">#3f88c5</color>
+    <color name="work_color">#d00000</color>
+    <color name="shop_color">#F857C3</color>
+    <color name="stock_color">#00b4cd</color>
+    <color name="fitness_color">#079D4D</color>
+    <color name="study_color">#8B00FF</color>
+
+
+</resources>

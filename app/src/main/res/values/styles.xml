@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TransparentBottomSheet" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@color/transparent_black</item>
+    </style>
+
+    <style name="CategoryChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textColor">@color/light_background</item>
+        <item name="checkedIconTint">@color/light_background</item>
+    </style>
+
+    <style name="CategoryChip.Work" parent="CategoryChip">
+        <item name="chipBackgroundColor">@color/work_color</item>
+    </style>
+
+    <style name="CategoryChip.Fitness" parent="CategoryChip">
+        <item name="chipBackgroundColor">@color/fitness_color</item>
+    </style>
+
+    <style name="CategoryChip.Study" parent="CategoryChip">
+        <item name="chipBackgroundColor">@color/study_color</item>
+    </style>
+
+    <style name="CategoryChip.Personal" parent="CategoryChip">
+        <item name="chipBackgroundColor">@color/personal_color</item>
+    </style>
+
+    <style name="CategoryChip.Shopping" parent="CategoryChip">
+        <item name="chipBackgroundColor">@color/shop_color</item>
+    </style>
+
+
+</resources>

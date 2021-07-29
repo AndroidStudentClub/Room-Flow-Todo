@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Мои задачи</string>
+    <string name="action_settings">Настройки</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Задач на сегодня нет\nНаслаждайтесь своим днём</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="create_task_title">Создайте задачу</string>
+    <string name="enter_title_hint">Введите название задачи</string>
+
+    <string name="category_fitness">Фитнес</string>
+    <string name="category_shopping">Покупки</string>
+    <string name="category_work">Работа</string>
+    <string name="category_study">Обучение</string>
+    <string name="category_personal">Личное</string>
+
+    <string name="save_title">Сохранить</string>
+
+
+</resources>
