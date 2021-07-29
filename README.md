@@ -18,5 +18,8 @@
 - Android Navigation для навигации между экранами. [Подробнее](https://developer.android.com/guide/navigation/navigation-getting-started)
 - Kotlin Flow и Kotlin Coroutines для асинхронной работы. [Подробнее](https://kotlinlang.org/docs/flow.html)
 
-[Подисывайтесь на telegram](https://t.me/android_school_ru)
+## Интенсив с code-review для middle-разработчиков 📚:
 [Интенсив для middle-разработчиков](http://intensive.androidschool.ru/?utm_source=github&utm_medium=readme&utm_campaign=room_flow)
+
+## Анонсы новых туториалов:
+[Подисывайтесь на telegram](https://t.me/android_school_ru)
