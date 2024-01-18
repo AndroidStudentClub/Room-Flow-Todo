@@ -3,6 +3,7 @@ package ru.androidschool.besttodo.presentation.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
@@ -63,4 +64,5 @@ class TasksListViewModel(private val repository: TaskRepository) :
     private fun hideProgress() {
         _dataLoading.value = false
     }
+
 }
