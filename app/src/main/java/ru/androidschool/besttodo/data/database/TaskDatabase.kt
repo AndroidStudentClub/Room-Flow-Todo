@@ -14,7 +14,6 @@ import java.util.concurrent.Executors
 
 const val DATABASE_VERSION_CODE = 1
 
-@TypeConverters(TaskCategoryConverter::class)
 @Database(entities = [TaskEntity::class], version = DATABASE_VERSION_CODE, exportSchema = true)
 abstract class TaskDatabase : RoomDatabase() {
 

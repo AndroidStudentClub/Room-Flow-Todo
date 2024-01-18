@@ -5,15 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.androidschool.besttodo.R
-import ru.androidschool.besttodo.data.model.TaskEntity
 import ru.androidschool.besttodo.data.model.TaskCategory
+import ru.androidschool.besttodo.data.model.TaskEntity
 
-class TasksAdapter : RecyclerView.Adapter<TaskViewHolder>() {
+class TasksAdapter(internal val listener: (TaskEntity) -> Unit) :
+    RecyclerView.Adapter<TaskViewHolder>() {
 
     private var tasks: List<TaskEntity> = listOf()
 
@@ -23,8 +23,11 @@ class TasksAdapter : RecyclerView.Adapter<TaskViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        val quote = tasks[position]
-        holder.bind(quote)
+        val task = tasks[position]
+        holder.bind(task)
+        holder.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            listener.invoke(task.copy(isCompleted = isChecked))
+        }
     }
 
     override fun getItemCount(): Int = tasks.size
@@ -40,9 +43,10 @@ class TasksAdapter : RecyclerView.Adapter<TaskViewHolder>() {
 }
 
 class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
     private val title: TextView = view.findViewById(R.id.task_name)
-    private val checkBox: CheckBox = view.findViewById(R.id.status_checkbox)
     private val categoryMarker: View = view.findViewById(R.id.category_marker)
+    val checkBox: CheckBox = view.findViewById(R.id.status_checkbox)
 
     fun bind(currentTask: TaskEntity) {
         title.text = currentTask.title
