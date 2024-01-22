@@ -62,11 +62,6 @@ class CreateTaskFragment : BottomSheetDialogFragment() {
         _binding = null
     }
 
-
-    interface TaskClickListener {
-        fun onItemClick(task: TaskEntity)
-    }
-
     companion object {
         const val TAG = "ActionBottomDialog"
         fun newInstance(): CreateTaskFragment = CreateTaskFragment()
