@@ -18,7 +18,7 @@ import ru.androidschool.besttodo.presentation.main.TasksAdapter
 import ru.androidschool.besttodo.presentation.main.TasksListViewModel
 import ru.androidschool.besttodo.presentation.main.TasksListViewModelFactory
 
-class TasksListFragment : Fragment(), CreateTaskFragment.TaskClickListener {
+class TasksListFragment : Fragment() {
 
     private var _binding: FragmentTasksBinding? = null
 
@@ -26,9 +26,7 @@ class TasksListFragment : Fragment(), CreateTaskFragment.TaskClickListener {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var placeholderContainer: ConstraintLayout
-    private val taskAdapter = TasksAdapter() { taskListViewModel.updateTask(it) }
+    private val taskAdapter = TasksAdapter { taskListViewModel.updateTask(it) }
 
     private val taskListViewModel: TasksListViewModel by viewModels {
         TasksListViewModelFactory(
@@ -57,10 +55,6 @@ class TasksListFragment : Fragment(), CreateTaskFragment.TaskClickListener {
         taskListViewModel.getAllTasks().observe(viewLifecycleOwner, Observer<List<TaskEntity>> {
             updateResults(it)
         })
-    }
-
-    override fun onItemClick(task: TaskEntity) {
-        taskListViewModel.insertTask(task)
     }
 
     private fun updatePlaceholder() {
