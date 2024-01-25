@@ -8,14 +8,12 @@ import org.junit.runner.Description
 import org.junit.runner.RunWith
 import ru.androidschool.besttodo.data.database.TaskDatabase
 
-
 @RunWith(AndroidJUnit4::class)
 class DatabaseRule : TestWatcher() {
 
     lateinit var appDatabase: TaskDatabase
 
     override fun starting(description: Description?) {
-        System.out.println("STARTING");
         appDatabase = Room.inMemoryDatabaseBuilder(
             ApplicationProvider.getApplicationContext(),
             TaskDatabase::class.java)

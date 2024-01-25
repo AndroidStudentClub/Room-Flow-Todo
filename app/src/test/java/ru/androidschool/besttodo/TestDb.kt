@@ -12,12 +12,14 @@ import java.io.IOException
 @RunWith(AndroidJUnit4::class)
 abstract class DatabaseTest {
 
-    protected    lateinit var appDatabase: TaskDatabase
+    protected lateinit var appDatabase: TaskDatabase
+
     @Before
     fun initDb() {
         appDatabase = Room.inMemoryDatabaseBuilder(
             ApplicationProvider.getApplicationContext(),
-            TaskDatabase::class.java)
+            TaskDatabase::class.java
+        )
             .allowMainThreadQueries()
             .build()
     }

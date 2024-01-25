@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import junit.framework.Assert.*
+import kotlinx.coroutines.test.TestCoroutineDispatcher
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -14,8 +15,8 @@ import org.mockito.Mock
 import org.mockito.Mockito.spy
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
-import ru.androidschool.besttodo.data.model.TaskEntity
 import ru.androidschool.besttodo.data.model.TaskCategory
+import ru.androidschool.besttodo.data.model.TaskEntity
 import ru.androidschool.besttodo.data.repository.TasksRepositoryImpl
 import ru.androidschool.besttodo.presentation.main.TasksListViewModel
 
@@ -42,8 +43,7 @@ class TasksViewModelTest {
         MockitoAnnotations.initMocks(this)
         viewModel = spy(
             TasksListViewModel(
-                ApplicationProvider.getApplicationContext(),
-                TasksRepositoryImpl(ApplicationProvider.getApplicationContext())
+                TasksRepositoryImpl(ApplicationProvider.getApplicationContext(), TestCoroutineDispatcher())
             )
         )
         isLoadingLiveData = viewModel.dataLoading
