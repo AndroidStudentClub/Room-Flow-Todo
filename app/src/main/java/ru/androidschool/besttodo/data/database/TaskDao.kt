@@ -12,6 +12,7 @@ interface TaskDao {
     @Query("SELECT * FROM tasks ORDER BY id DESC")
     fun getTasks(): Flow<List<TaskEntity>>
 
+    @Transaction
     @Query("SELECT * FROM tasks ORDER BY id DESC")
     suspend fun getTasksWithSubtasks(): List<Task>
 
@@ -27,6 +28,7 @@ interface TaskDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSubTask(s: Subtask)
 
+    @Transaction
     @Query("SELECT * FROM tasks WHERE id =:id ORDER BY id DESC")
     suspend fun getTasksById(id: Int): List<Task>
 }
