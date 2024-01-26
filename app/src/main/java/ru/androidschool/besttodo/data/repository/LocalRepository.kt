@@ -7,8 +7,8 @@ import kotlinx.coroutines.withContext
 import ru.androidschool.besttodo.data.database.TaskDao
 import ru.androidschool.besttodo.data.database.TaskDatabase
 import ru.androidschool.besttodo.data.model.Subtask
-import ru.androidschool.besttodo.data.model.Task
 import ru.androidschool.besttodo.data.model.TaskEntity
+import ru.androidschool.besttodo.data.model.TaskWithSubtasks
 import ru.androidschool.besttodo.domain.repository.TaskRepository
 
 class TasksRepositoryImpl(
@@ -19,7 +19,7 @@ class TasksRepositoryImpl(
     private val taskDao: TaskDao
 
     init {
-        val database = TaskDatabase.getInstance(context, backgroundDispatcher)
+        val database = TaskDatabase.getInstance(context)
         taskDao = database!!.taskDao()
     }
 
@@ -50,7 +50,7 @@ class TasksRepositoryImpl(
         return taskDao.getTasks()
     }
 
-    override suspend fun getTasksWithSubTasks(id: Int): List<Task> {
-        return  withContext(backgroundDispatcher) { taskDao.getTasksById(id)}
+    override suspend fun getTasksWithSubTasks(id: Long): List<TaskWithSubtasks> {
+        return withContext(backgroundDispatcher) { taskDao.getTasksById(id) }
     }
 }

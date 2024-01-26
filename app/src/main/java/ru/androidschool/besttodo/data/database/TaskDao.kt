@@ -3,8 +3,8 @@ package ru.androidschool.besttodo.data.database
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import ru.androidschool.besttodo.data.model.Subtask
-import ru.androidschool.besttodo.data.model.Task
 import ru.androidschool.besttodo.data.model.TaskEntity
+import ru.androidschool.besttodo.data.model.TaskWithSubtasks
 
 @Dao
 interface TaskDao {
@@ -14,7 +14,7 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM tasks ORDER BY id DESC")
-    suspend fun getTasksWithSubtasks(): List<Task>
+    suspend fun getTasksWithSubtasks(): List<TaskWithSubtasks>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTask(task: TaskEntity): Long
@@ -30,5 +30,5 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE id =:id ORDER BY id DESC")
-    suspend fun getTasksById(id: Int): List<Task>
+    suspend fun getTasksById(id: Long): List<TaskWithSubtasks>
 }

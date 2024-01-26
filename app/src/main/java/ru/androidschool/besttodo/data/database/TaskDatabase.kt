@@ -28,8 +28,7 @@ abstract class TaskDatabase : RoomDatabase() {
         private var INSTANCE: TaskDatabase? = null
 
         fun getInstance(
-            context: Context,
-            backgroundDispatcher: CoroutineDispatcher
+            context: Context
         ): TaskDatabase? {
             if (INSTANCE == null) {
                 synchronized(TaskDatabase::class) {

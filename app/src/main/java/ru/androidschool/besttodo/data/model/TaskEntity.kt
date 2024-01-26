@@ -9,7 +9,7 @@ import androidx.room.Relation
 @Entity(tableName = "tasks")
 data class TaskEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    val id: Long = 0,
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "isCompleted")
@@ -21,7 +21,7 @@ data class TaskEntity(
 @Entity(tableName = "subtask")
 data class Subtask(
     @PrimaryKey(autoGenerate = true)
-    val subtaskId: Int = 0,
+    val subtaskId: Long = 0,
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "description")
@@ -29,10 +29,10 @@ data class Subtask(
     @ColumnInfo(name = "isCompleted")
     val isCompleted: Boolean,
     @ColumnInfo(name = "parentTaskId")
-    val parentTaskId: Int
+    val parentTaskId: Long
 )
 
-data class Task(
+data class TaskWithSubtasks(
     @Embedded
     val parentTask: TaskEntity,
     @Relation(
